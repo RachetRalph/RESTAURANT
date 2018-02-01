@@ -1,0 +1,19 @@
+{
+  "name": "restaurant",
+  "version": "1.0.0",
+  "description": "Resturant Reservation ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RachetRalph/RESTAURANT.git"
+  },
+  "author": "Ralph_A, Eric",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RachetRalph/RESTAURANT/issues"
+  },
+  "homepage": "https://github.com/RachetRalph/RESTAURANT#readme"
+}
