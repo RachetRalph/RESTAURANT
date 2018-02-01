@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars - Express</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Kristi" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 id="font1">🔥 HOT RESTAURANT</h1>
+            <h3 id="font2">The best reservation resource in the galaxy</h3>
+            <hr>
+            <a href="#" class="btn btn-warning btn-lg">
+                <span class="glyphicon glyphicon-list-alt"></span> View Tables
+            </a>
+
+            <a href="#" class="btn btn-danger btn-lg">
+                <span class="glyphicon glyphicon-credit-card"></span> Make Reservation
+            </a>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+        $("#search-btn").on("click", function () {
+            var searchedCharacter = $("#character-search").val().trim();
+
+            // Using a RegEx Pattern to remove spaces from searchedCharacter
+            // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+            searchedCharacter = searchedCharacter.replace(/\s+/g, "").toLowerCase();
+
+            $.get("/api/" + searchedCharacter, function (data) {
+                console.log(data);
+                if (data) {
+                    $("#stats").show();
+                    $("#name").text(data.name);
+                    $("#role").text(data.role);
+                    $("#age").text(data.age);
+                    $("#force-points").text(data.forcePoints);
+                } else {
+                    $("#name").text(
+                        "The force is not strong with this one. Your character was not found.");
+                    $("#stats").hide();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+.jumbotron {
+    margin-top: 5px;
+    text-align: center;
+}
+#font1{
+    font-family: 'Cabin Sketch',cursive;
+}
+#font2{
+    font-family: 'Kristi', cursive;
+    font-size: 40px;
+}
